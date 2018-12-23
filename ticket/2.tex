@@ -66,3 +66,48 @@ i\left[
 \begin{equation*}
 	\frac{\partial S}{\partial t}+H=0
 \end{equation*}
+
+\subsubsection{\textcolor{red}{Оператор в конкретном представлении. Матрица оператора.}}
+
+\subsubsection{Задача. Отнормировать/нарисовать $\psi(x)=1/\cosh(\alpha(x-x_0))$}
+
+Дана ненормированная волновая функция $\psi(x)$:
+\begin{gather*}
+\psi(x)=\frac{1}{\cosh(\alpha(x-x_0))}
+\end{gather*}
+Отнормируйте и нарисуйте график плотности вероятности величины $x$.
+
+\textbf{Решение}. Предположим, что наша функция есть произведение нормированной $\psi_0$ на произвольную константу $c$, найдем ее из условия нормировки:
+
+\begin{gather*}
+\int_{-\infty}^{\infty}|\psi_0(x)|^2 dx=
+c^2\int_{-\infty}^{\infty}|\psi(x)|^2 dx=1
+\end{gather*}
+
+\begin{gather*}
+\int_{-\infty}^{\infty}|\psi(x)|^2 dx=
+\int_{-\infty}^{\infty} \cosh^{-2}(\alpha(x-x_0)) dx=
+\textcolor{violet}{\left[ y=\alpha(x-x_0), dx=\frac{dy}{\alpha}\right]}=\\=
+\frac{1}{\alpha}\int_{-\infty}^{\infty} \cosh^{-2}y dy=
+\frac{4}{\alpha}\int_{-\infty}^{\infty} \frac{1}{(e^y+e^{-y})^2}dy=
+\textcolor{violet}{\left[ e^y=t, dy=\frac{dt}{t}, t(y=-\infty)=0, t(y=\infty)=\infty\right]}=\\=
+%
+\frac{4}{\alpha}\int_0^{\infty} \frac{1}{t(t+1/t)^2}dt=
+\frac{4}{\alpha}\int_0^{\infty} \frac{t}{(t^2+1)^2}dt=
+\frac{2}{\alpha}\int_0^{\infty} \frac{d[t^2]}{(t^2+1)^2}dt=
+\frac{2}{\alpha}\int_0^{\infty} \frac{d[t^2+1]}{(t^2+1)^2}dt=\\=
+-\frac{2}{\alpha}\frac{1}{(t^2+1)}\bigg|_{0}^{\infty}=
+\frac{2}{\alpha}
+\end{gather*}
+
+Тогда  $c^2=\frac{\alpha}{2} \Rightarrow c=\sqrt\frac{\alpha}{2} $.
+
+Мы нашли нормированную функцию:
+
+\begin{gather*}
+\psi_0=\sqrt\frac{\alpha}{2}\frac{1}{\cosh^2(\alpha(x-x_0))},\qquad
+|\psi_0|^2=\frac{\alpha}{2}\frac{1}{\cosh(\alpha(x-x_0))}
+\end{gather*}
+
+% <!---->
+Колокообразный вид функции $|\psi_0|^2$ легко нарисовать,  если учесть, что 1) она всегда положительна 2) имеет максимум там, где $\cosh$ имеет минимум (т.е. в точке $x=x_0$, тогда максимум равен $\frac{\alpha}{2}$).

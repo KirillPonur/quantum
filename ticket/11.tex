@@ -1,3 +1,28 @@
 %!TEX root = ../quantum.tex
 \subsubsection{Нахождения волновой функции по данным одного из представлений}
 
+$$\Psi(x)= \exp{-\frac{(x-x')^2}{4b^2}} $$
+$$\Psi_(p)= \frac{1}{\sqrt{2\pi\hbar}}\infint \exp{-\frac{(x-x')^2}{4b^2}}\exp{-\frac{ipx}{\hbar}} \dd{x} $$
+\begin{gather*}
+\infint \exp{-\frac{(x-x')^2}{4b^2}-\frac{ipx}{\hbar} }\dd{x} = 
+\infint \exp{-\frac{y^2}{4b^2}-\frac{ip(y+x')}{\hbar}} \dd{y} = \\
+\exp{-\frac{-ipx'}{\hbar}}\infint \exp{-\frac{y^2}{4b^2}-\frac{ipy}{\hbar}}  \dd{x}=\\
+\exp{-\frac{-ipx'}{\hbar}}\infint \exp{-\qty( \frac{y}{2b}+ \frac{ipb}{\hbar})^2
++\qty( \frac{ipb}{\hbar}  )^2} \dd{y}=\\
+\exp{-\frac{ipx'}{\hbar}}\exp{-\qty(\frac{ipb}{\hbar})^2}\cdot 2b \infint \exp{-t^2} \dd{t}=\\
+\exp{-\frac{ipx'}{\hbar}}\exp{-\qty(\frac{ipb}{\hbar})^2}\cdot 2b\sqrt\pi
+\end{gather*}
+Итак, мы нашли ненормированную волновую функцию 
+$$\Psi(p)= 2b\frac{\sqrt\pi}{\sqrt{2\pi\hbar}} \cdot \exp{-\frac{ipx'}{\hbar}-\qty(\frac{ipb}{\hbar})^2}$$
+Амплитуда при нормировке не важная (см. замечание 1)
+
+Где-то здесь ошибка в нахождении $c$, напомните мне её поискать. Спасибо.
+
+$$\infint \Psi(p)\Psi^*(p)\dd{p}=\frac{1}{c^2}$$
+$$\infint\exp{-\frac{2p^2b^2}{\hbar^2}}\dd{p}=\frac{\sqrt{2\pi} b}{\hbar}$$
+Отсюда 
+$$c=\frac{\sqrt{\hbar}}{\sqrt b (2\pi)^{1/4}}.$$
+\subsubsection{\textcolor{red} {Восстановление волнового уравнения для свободной частицы по дисперсионному
+соотношению.} }
+
+\subsubsection{\textcolor{red} {Нестационарное уравнение Шредингера} }
