@@ -1,1 +1,27 @@
 %!TEX root = ../quantum.tex
+\subsubsection{Вопрос 1}
+Покажите, что если два оператора, A и B имеют общие собственные функции, то
+они коммутируют.
+
+\begin{gather*}
+	\hat{B}\cdot\eval \hat{A}\Psi_n=a_n\Psi_n \\
+	\hat{A}\cdot\eval \hat{b}\Psi_n=b_n\Psi_n
+\end{gather*}
+\begin{equation*}
+\begin{cases}
+	\hat{B}\hat{A}\Psi_n=a_n\hat{B}\Psi_n \\
+	\hat{A}\hat{B}\Psi_n=b_n\hat{A}\Psi_n
+\end{cases}
+\end{equation*}
+
+\begin{equation*}
+\begin{cases}
+	\hat{B}\hat{A}\Psi_n=a_nb_n\Psi_n \\
+	\hat{A}\hat{B}\Psi_n=b_na_n\Psi_n \\
+\end{cases}
+\end{equation*}
+Вычтем из первого уравнения второе:
+\begin{equation*}
+	(\hat{B}\hat{A}-\hat{A}\hat{B})\Psi=\sum\limits_n a_n (\hat{B}\hat{A}-\hat{A}\hat{B})\Psi_n=0
+\end{equation*}
+Следовательно $\hat{A}$  и $\hat{B}$ коммутируют.
