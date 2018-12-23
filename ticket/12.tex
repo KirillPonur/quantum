@@ -1,1 +1,46 @@
 %!TEX root = ../quantum.tex
+\subsubsection{Нахождения волновой функции по данным одного из представлений}
+
+$$\Psi(x)= \exp{-U\abs{x-x'} +ivx  }$$
+$\Psi_0(x)$-- нормированная функция $\Psi$. $\Psi_0(x)=c\Psi(x)$.
+$$\infint \abs{\Psi_0(x)}^2 \dd{x}=1$$
+\begin{gather*}
+	c^2\infint \Psi(x)^*\cdot\Psi(x)\dd{x}=
+	\\ \frac{c^2}{2U}\exp{2U(x-x')}\eval_{-\infty}^{x'}- 
+	\frac{c^2}{2U}\exp{-2U(x-x')}
+	\eval^{\infty}_{x'}
+\end{gather*}
+Проводя очевидные действия находим нормировочную постоянную $c=\sqrt{U}$
+
+Тогда $\Psi_0(x)=\sqrt{U}\exp{-U\abs{x-x'}+ivx}$.
+
+\begin{gather*}
+\Psi(p)=\frac{1}{\sqrt{2\pi\hbar}}\infint \Psi_0(x)\cdot\exp{-\frac{px}{\hbar}} \dd{x}=\\
+\sqrt\frac{U}{2 \pi \hbar } \infint \exp{-U\abs{x-x'}}\exp{-ivx}\exp{-\frac{ipx}{\hbar}} \dd{x}
+\end{gather*}
+Обозначим $\tilde{\Psi}(x)=\sqrt{U} \exp{-u\abs{x-x'}}$,
+ тогда $\Psi_0(x)=\tilde{\Psi(x)}\cdot\exp{ivx}$
+
+Преобразуем $\tilde{\Psi}(x)\longrightarrow \tilde{\Psi}(p)$ 
+%сейчас будет охрененно большой gather
+\begin{gather*}
+	\tilde{\Psi}(p)=\frac{1}{\sqrt{2\pi\hbar}}\infint\tilde\Psi(x)\exp{-\frac{ipx}{\hbar}} \dd{x} =\sqrt{\frac{U}{2 \pi \hbar}} \infint \exp{-U\abs{x-x'}}\exp{-\frac{ipx}{\hbar}}\dd{x} =\\
+	\sqrt{\frac{U}{2 \pi \hbar}} \left(
+	\int\limits_{-\infty}^{x'} \exp{+U (x-x')}\exp{-\frac{ipx}{\hbar}}\dd{x} 
+	+
+	\int\limits^{\infty}_{x'} \exp{-U (x-x')}\exp{-\frac{ipx}{\hbar}}\dd{x}
+	\right)\\=
+	\sqrt{\frac{U}{2 \pi \hbar }}\exp{-\frac{ipx' }{\hbar}}
+	\qty
+	(\int\limits_{-\infty}^0 e^{Uy} e^{-\frac{ipy}{\hbar}}\dd y+
+	\int\limits^{\infty}_0 e^{-Uy} e^{-\frac{ipy}{\hbar}}\dd y
+	 )
+	 =\\
+	 \sqrt{\frac{U}{2 \pi \hbar}} \exp{-\frac{ipx' }{\hbar}} 
+	 \qty(\frac{1}{U-\frac{ip}{\hbar}} + \frac{1}{U+\frac{ip}{\hbar}})=\\
+	 \frac{2}{U\qty(1+\frac{p^2}{U^2\hbar^2})}\sqrt{\frac{U}{2 \pi \hbar}} \exp{-\frac{ipx'}{\hbar}}=\sqrt{2}{U \pi \hbar} \frac{1}{1+\frac{p^2}{U^2\hbar^2}}\exp{-\frac{ipx' }{\hbar}}=\tilde {\Psi}(x). 
+\end{gather*}
+Напомним, что $\Psi_0(x)=\tilde\Psi(x)e^{ivx}$. Согласно замечанию 2:
+	 $$\Psi(p)=\tilde{\Psi}(p-\hbar v)$$
+И окончательный ответ:
+	 $$\Psi(p)=\sqrt{\frac{2}{U\pi\hbar}}\cdot\frac{1}{1+\frac{(p-\hbar v)^2}{U^2\hbar^2}}\exp{-\frac{i(p-\hbar v)x' }{\hbar}} $$

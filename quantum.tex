@@ -50,7 +50,18 @@
 \input{ticket/21}
 \subsection{Билет 22}
 \input{ticket/22}
-
-
-
+\subsection{Замечание 1}
+При нормировке функции $\Psi$ важна лишь ее форма, а не амплитуда, так как
+существует лишь один вариант сделать единичную площадь у фигуры
+заданной формы. Поэтому, при определении нормы амплитуда изначальной
+функции $\Psi$ не важна, а важна лишь форма, следовательно, амплитуда
+может быть произвольной и выбираться с точки зрения упрощения решения
+задачи.
+\subsection{Замечание 2}
+$$\Psi_1=\Psi(x)e^{i \alpha x} $$
+$$\Psi_1 = \frac{1}{\sqrt{2\pi\hbar}}\infint \Psi_1(x) e^{-\frac{ipx}{\hbar}} \dd x$$
+\begin{gather}
+\Psi_1(p)=\frac{1}{\sqrt{2\pi\hbar}}\infint \Psi(x) e^{i \alpha x} e^{-\frac{ipx}{\hbar}} \dd x =\\
+\frac{1}{\sqrt{2\pi\hbar}}\infint \Psi(x) e^{-\frac{ix}{\hbar}(p-\hbar \alpha)}=\Psi(p-\hbar \alpha)
+\end{gather}
 \end{document}

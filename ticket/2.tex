@@ -1,1 +1,68 @@
 %!TEX root = ../quantum.tex
+
+\subsubsection{Уравнение Шредингера. Вывод перехода к классике с появлением уравнения Гамильтона-Якоби}
+
+Нестационарное уравнение Шредингера $i\hbar\frac{\partial \psi}{\partial t}=\hat{H}\psi$. Будем искать его решение в виде $\psi=Ae^{i\Theta}$:
+
+$$
+i\hbar \frac{\partial \psi}{\partial t}=i\hbar \frac{\partial A}{\partial t}e^{i\Theta}-\hbar A\frac{\partial \Theta}{\partial t}e^{i\Theta}
+$$
+
+Учтем, что 
+
+$$\hat{H}=\frac{\hat{p}^2}{2m}+U(r)=\frac{(-i\hbar \nabla)^2}{2m}+U(r)=\frac{-\hbar^2}{2m}\Delta+U(r)$$
+
+и
+
+\begin{gather*}
+\Delta\psi=\nabla^2\left[A\cdot e^{i\Theta}\right]=
+\nabla\left[\nabla A\cdot e^{i\Theta}+iA\nabla\Theta \cdot e^{i\Theta}\right]=
+\nabla\left[
+	\nabla A\cdot e^{i\Theta}
+	\right]+\nabla\left[
+		iA\nabla\Theta \cdot e^{i\Theta}
+	\right]=\\=
+\left[
+	\Delta A \cdot e^{i\Theta}+i\nabla A\nabla\Theta \cdot e^{i\Theta}\right]+
+i\left[
+	\nabla A\nabla \Theta+A\Delta\Theta+
+	iA\nabla \Theta \nabla \Theta
+\right]e^{i\Theta}=\\=
+\left[
+	\Delta A +i\nabla A\nabla\Theta + i\nabla A\nabla \Theta+iA\Delta\Theta - A(\nabla \Theta)^2
+\right]e^{i\Theta}=\\=
+\left[
+	\Delta A +2i\nabla A\nabla\Theta +iA\Delta\Theta - A(\nabla \Theta)^2
+\right]e^{i\Theta}
+% \Delta A\cdot e^{i\Theta} + A\cdot \Delta[e^{i\Theta}]=
+% \Delta A\cdot e^{i\Theta} + A\cdot 
+% (-e^{i\Theta})\left((\nabla \Theta)^2-i\Delta\Theta\right)
+\end{gather*}
+Тогда нестационарное уравнение Шредингера принимает вид:
+\begin{gather*}
+	i\hbar \frac{\partial A}{\partial t}-\hbar A\frac{\partial \Theta}{\partial t}=-\frac{\hbar^2}{2m}\left[
+	\Delta A +2i\nabla A\nabla\Theta +iA\Delta\Theta - A(\nabla \Theta)^2+A\cdot U(r)
+\right]
+\end{gather*}
+Разделим в нем реальные и мнимые части:
+\begin{gather*}
+	i\hbar \frac{\partial A}{\partial t}=-\frac{\hbar^2}{2m}
+	(2i\nabla A\nabla\Theta+iA\Delta\Theta)\\
+	-\hbar A\frac{\partial \Theta}{\partial t}=-\frac{\hbar^2}{2m}\left(\Delta A - A(\nabla \Theta)^2\right)+A\cdot U(r)
+\end{gather*}
+Работаем в приближении $\Delta A \ll (\nabla\Theta)^2$:
+\begin{gather*}
+	-\hbar A\frac{\partial \Theta}{\partial t}=\frac{\hbar^2}{2m}\left(A(\nabla \Theta)^2\right)+A\cdot U(r)\quad \bigg|\,:A\\
+	-\hbar \frac{\partial \Theta}{\partial t}=\frac{\hbar^2}{2m}(\nabla \Theta)^2+U(r)
+\end{gather*}
+Воспользуемся соотношениями де-Бройля $S=\hbar\Theta$, $\nabla S=\vec{p}$:
+\begin{gather*}
+	\frac{\partial \Theta}{\partial t}=\frac{1}{\hbar}\frac{\partial S}{\partial t}, \qquad
+	\nabla\Theta=\nabla S\frac{1}{\hbar}=\frac{\vec{p}}{\hbar}\\
+%
+	-\frac{\partial S}{\partial t}=\frac{\hbar^2}{2m}\frac{p^2}{\hbar^2}+U(\vec{r})=\frac{p^2}{2m}+U(\vec{r})=H
+\end{gather*}
+Окончательно получаем уравнение Гамильтона-Якоби:
+\begin{equation*}
+	\frac{\partial S}{\partial t}+H=0
+\end{equation*}
