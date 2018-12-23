@@ -14,6 +14,64 @@ $\Psi(x)=e^{\frac{p_xx}{-i\hbar}}=e^{\frac{ip_xx}{\hbar}}$ - волна Де Б�
 $$\Psi(x)=\int \Psi(p) e^{\frac{ip_xx}{\hbar}} dx$$
  учетом нормировки в одномерном случае:
  $$\Psi(x)=\frac{1}{\sqrt{2\pi \hbar}}\int \Psi(p) e^{\frac{ip_xx}{\hbar}} dx$$
+
 \subsubsection{Докажите, что нормировка сохраняется при замене представления, если использовать нормированные собственные функции }
 
+$$\infint \abs{\Psi(x)}^2 \dd{x} = \infint \abs{\Psi(p)}^2 \dd{p}$$
+По теореме Парсиваля:
+$$\infint g^*(x) f(x)=\infint G^*(p) F(p) \dd{p}, $$
+где $G(p)=F[g(x)]$, $F(p)=F[f(x)]$.
+
+Тогда
+
+$$\infint \Psi(x)^*\Psi(x) \dd{x} = \infint \Psi(p)^*\Psi(p) \dd{p} $$
+$$\infint \abs{\Psi(x)}^2 \dd{x} = \infint \abs{\Psi(p)}^2\dd{p}  $$
+Что же, осталось только доказать теорему Парсиваля.
+
+{\centering\textbf{Доказательство} \\}
+
+\begin{flushleft}
 	
+Пусть:
+
+$\phi_0=\phi_1(x)\phi_2(x)$
+
+Известно что:
+
+$\Phi_1(p)=F[\phi_1(x)]$
+
+$\Phi_2(p)=F[\phi_2(x)]$
+
+Найдём:
+$\Phi_0(p)=F[\phi_1(x)\cdot\phi_2(x)]$
+
+\end{flushleft}
+% Ща снова буит мясо
+\begin{gather*}
+\Phi_0(p)=\frac{1}{\sqrt{2 \pi \hbar}} 
+\infint \phi_1(x)\phi_2(x)\exp{-\frac{ipx}{\hbar}} \dd x =\\
+\frac{1}{\sqrt{2 \pi \hbar}}
+\infint \frac{1}{\sqrt{2 \pi \hbar}} 
+\infint \Phi_1(p')\exp{+\frac{ip' x}{\hbar}}\dd{p'}\cdot \phi_2(x)\exp{-\frac{ipx}{\hbar}}\dd{x}=\\
+\frac{1}{2\pi\hbar}
+\infint \infint \Phi_1(p')
+\exp{\frac{ix(p'-p)}{\hbar}}\dd{p'}
+ \cdot\phi_2(x)\dd{x}=\\
+\frac{1}{2\pi\hbar}
+\infint\infint\phi_2(x)\exp{\frac{ix}{\hbar}(p'-p)}\dd{x}\cdot\Phi_1(p' )\dd{p'}=\\
+\qty{\frac{1}{2\pi\hbar}\infint\phi_2(x)\exp{\frac{ix}{\hbar}(p'-p)}=\Phi_2(p-p')}=\\
+\frac{1}{\sqrt{2\pi\hbar}}\infint \Phi_2(p-p')\Phi_1(p')\dd{p'}
+\end{gather*}
+
+Получили, что 
+$$\Phi_0=\frac{1}{\sqrt{2\pi\hbar}}\infint \Phi_2(p-p')\Phi_1(p')\dd{p'}=
+\frac{1}{\sqrt{2\pi\hbar}} \infint \phi_1(x)\phi_2(x) e^{-\frac{ipx}{\hbar}} \dd{x}$$
+
+Пусть $p=0$, тогда 
+$$\Phi_0(0)=\frac{1}{\sqrt{2\pi\hbar}} \infint \phi_1(x)\phi_2(x)\dd{x}$$
+$$\infint \Phi_2(-p' )\Phi_1(p' )\dd{p'}= \infint \phi_1(x) \phi_2(x)\dd{x} $$
+По свойству преобразования Фурье:
+$$F[\phi^*(x)]=\Phi^*(-p) $$
+Получаем:
+$$\infint \Phi_2'^*(p)\Phi_1(p') \dd{p'} = \infint \phi_1 \phi^*_2(x) \dd{x} $$
+Что и требовалось доказать. \qed
