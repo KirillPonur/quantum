@@ -1,1 +1,19 @@
 %!TEX root = ../quantum.tex
+\subsubsection{Вопрос 1}
+
+Докажите, что если операторы коммутируют, то они имеют общие собственные
+функции.
+
+
+$$\hat{M}\hat{F}-\hat{F}\hat{M}=0$$
+Пусть $\Psi_n$ образуют полную систему собственных функций оператор $\hat{M}$, то есть
+$\hat{M}\Psi_n=M_n\Psi_n$.
+
+Подействуем оператором $\hat{F}$
+
+$$\hat{M}\hat{F}=\hat{F}\hat{M}$$
+$$\hat{M}\hat{F}\Psi_n=\hat{F}\hat{M}\Psi_n=\hat{F}M_n\Psi_m=M_n\hat{F}\Psi_n $$
+$$\hat{M}(\hat{F}\Psi_n)=M_n(\hat{F}\Psi_n), \hat{F\Psi_n}-\text{собственная функция оператора }\hat{M}$$
+Следовательно $\hat{F}\Psi_n=\Psi_n$. $\hat{F}\Psi_n$ отличается от собственной функции только на константу, пусть $\const=F_n$
+
+Тогда $\hat{F}\Psi_n=F_n\Psi_n.$
