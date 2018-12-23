@@ -1,1 +1,59 @@
 %!TEX root = ../quantum.tex
+\subsubsection{Нахождения волновой функции по данным одного из представлений}
+
+$$\Psi(x)=\exp \qty{-\frac{(x-x')^2}{4b^2}+iUx} $$
+В этом билете функция нормироваться не будет, так как автору стало лень, а на самом деле её и не просят. К тому же, на полу ширину нормировка не влияет.
+
+$$\Psi(p)=\frac{1}{\sqrt{2\pi\hbar} } \infint \Psi(x) \exp{-\frac{ipx}{\hbar}}\dd{x} $$
+Иначе говоря, $\Psi(p)=F[\Psi(x)]$.
+
+По свойствам преобразования Фурье:  
+\begin{enumerate}
+	\item $\Psi_1(p-U\hbar)= F[\Psi_1(x)e^{iUx}]$ $\Psi_1(x)=\exp \qty{-\frac{(x-x')^2}{4b^2}}$
+	\item $\Psi_2(p)\exp{-\frac{ipx'}{\hbar}}=F[\Psi_2(x-x')]$, где 
+	$\Psi_2(x)=\exp \qty{-\frac{(x)^2}{4b^2}}$
+\end{enumerate}
+
+Найдем преобразование Фурье $\Psi_2(x)$ по определению.
+
+\begin{gather*}
+\Psi_2(p)=\frac{1}{\sqrt{2\pi\hbar}}\infint \exp{-\frac{x^2}{4b^2}+\frac{-ipx}{\hbar}}=\\
+\frac{1}{\sqrt{2\pi\hbar}}\infint \exp{-\qty(\frac{x}{2b}+\frac{ipb}{\hbar})^2+
+\qty(\frac{ipb}{\hbar})^2}\dd{x}= \\
+\frac{1}{\sqrt{2\pi\hbar}}\exp{-\frac{p^2b^2}{\hbar^2}} 
+\infint \exp{-\qty(\frac{x}{2b}+\frac{ipb}{\hbar})^2} \dd{x}=\\
+\frac{2b}{\sqrt{2\pi\hbar}}\exp{-\frac{p^2b^2}{\hbar^2}} 
+\infint \exp{-y^2}\dd{y}=\frac{2b\sqrt\pi}{\sqrt{2\pi b}}\exp{-\frac{p^2b^2}{\hbar^2}}=\\ 
+\sqrt{\frac{2}{\hbar}}b\exp{-\frac{p^2b^2}{\hbar^2}}
+\end{gather*}
+
+Получим, что $\Psi_2(p)=\sqrt{\frac{2}{\hbar}}b\exp{-\frac{p^2b^2}{\hbar^2}}$.
+
+$$\Psi_2(p)=F[\exp{-\frac{x^2}{4b^2}}]$$
+
+Согласно свойству (2):
+$$\sqrt{\frac{2}{\hbar}}b\exp{-\frac{p^2b^2}{\hbar^2}}\exp{-\frac{px'}{\hbar}}=
+F[\Psi_2(x-x')]=F\qty[ \exp{-\frac{(x-x')^2}{4b^2}} ] = F[\Psi_1(x)]$$
+Согласно свойству (1):
+\begin{gather*}
+\sqrt{\frac{2}{\hbar}}b\exp{-\frac{(p-U\hbar)^2b^2}{\hbar^2}}\exp{-\frac{i(p-U\hbar)x'}{\hbar}}=\\
+ F\qty[\exp{-\frac{(x-x')^2}{4b^2}}+iUx]=F[\Psi(x)]
+\end{gather*}
+Что и требовалось найти.
+
+\begin{equation}
+	\Psi(p)=\sqrt{\frac{2}{\hbar}}b\exp{-\frac{(p-U\hbar)^2b^2}{\hbar^2}-\frac{i(p-U\hbar)x'}{\hbar} }
+\end{equation}
+
+Теперь найдем $\Delta p$. Она в $\Psi(p)$ такая же, как в $\Psi_2(p)$. Ищем полуширину на уровне $\frac{1}{e}$. Тогда
+$$\Delta p=\frac{2\hbar}{b}$$
+Найдем $\Delta x$на уровне $\frac1e$, при этом отбрасывая фазу.
+
+\begin{gather*}
+	-\frac{(x-x')^2}{4b^2}=-1 \\
+	x_1=2b+x'\\
+	x_2=x'-2b\\
+	\Delta x= x_2-x_1=4b
+\end{gather*}
+
+$$\Delta x\cdot \Delta p=\frac{4b\cdot2\hbar}{b}=8\hbar  $$
