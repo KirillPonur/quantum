@@ -23,32 +23,32 @@ $$\hat{M}(\hat{F}\Psi_n)=M_n(\hat{F}\Psi_n), \hat{F\Psi_n}-\text{собстве�
 
 $$\hat{T}=-\frac{\hbar^2}{2m}\nabla^2- \text{оператор кинетической энергии}$$
 $$\hat{T_x}=-\frac{\hbar^2}{2m}\pdv[2]{x}$$
-$$\big  \inftyint\phi^*\hat{T}\Psi \dd{x}=
-\inftyint \hat{T}^+\phi^*\Psi \dd{x} - \text{определение эрмитовости}$$
+$$\big  \infint\phi^*\hat{T}\Psi \dd{x}=
+\infint \hat{T}^+\phi^*\Psi \dd{x} - \text{определение эрмитовости}$$
 \begin{gather*}  
-\inftyint\phi^* \qty(\frac{-\hbar^2}{2m})
+\infint\phi^* \qty(\frac{-\hbar^2}{2m})
 \qty(\pdv[2]{x}\Psi)\dd{x}=
 \begin{bmatrix}
 U=\phi^* & V=\pdv{\Psi}{x} \\
 \dd{U}=\pdv{\phi^*}{x} & \dd{V}=\pdv[2]{x}\Psi\dd{x}
 \end{bmatrix}=\\
 \phi^*\pdv{\Psi}{x}\eval_{-\infty}^{\infty}\qty(\frac{\hbar^2}{2m})-
-\qty(-\frac{\hbar^2}{2m})\inftyint
+\qty(-\frac{\hbar^2}{2m})\infint
 \pdv{\Psi}{x}\pdv{\phi^*}{x}\dd{x}
 =*
 \end{gather*}
 В силу физических соображений первое слагаемое дает 0 (на бесконечности функция не может расти, а только спадать).
 
 \begin{gather*}
-*= -\qty(-\frac{\hbar^2}{2m})\inftyint
+*= -\qty(-\frac{\hbar^2}{2m})\infint
 \pdv{\Psi}{x}\pdv{\phi^*}{x}\dd{x}= 
 	\begin{bmatrix}
 	U=\pdv{\phi^*}{x} & V=\Psi \\
 	\dd{U}=\pdv[2]{\phi^*}{x}\dd{x} & \dd{V}=\pdv{\Psi}{x}\dd{x}
 	\end{bmatrix}=\\
 -\Psi\pdv{\phi^*}{x}\eval_{-\infty}^{\infty}\qty(-\frac{\hbar^2}{2m})+
-\qty(-\frac{\hbar^2}{2m})\inftyint\pdv[2]{\phi^*}{x}\Psi\dd{x}\\=
-\inftyint \qty(-\frac{\hbar^2}{2m}\pdv[2]{x})\Psi^*\Psi \dd{x}
+\qty(-\frac{\hbar^2}{2m})\infint\pdv[2]{\phi^*}{x}\Psi\dd{x}\\=
+\infint \qty(-\frac{\hbar^2}{2m}\pdv[2]{x})\Psi^*\Psi \dd{x}
 \end{gather*}
 Следовательно, $\hat{T}=\hat{T}^+$. Значит оператор кинетической энергии эрмитов.
 
