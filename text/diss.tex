@@ -115,8 +115,13 @@
 \fancyfoot[C]{\thepage} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand\thesection{}
+\renewcommand\thesubsection{}
+\renewcommand\thesubsubsection{}
+\makeatother
 
 \renewcommand{\contentsname}{Оглавление}
 \usepackage{tocloft}
-\usepackage{secdot}
-\sectiondot{subsection}
+% \usepackage{secdot}
+% \sectiondot{subsection}
