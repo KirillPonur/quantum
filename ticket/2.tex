@@ -67,8 +67,58 @@ i\left[
 	\frac{\partial S}{\partial t}+H=0
 \end{equation*}
 
-\subsubsection{\textcolor{red}{Оператор в конкретном представлении. Матрица оператора.}}
+\subsubsection{{Оператор в конкретном представлении. Матрица оператора.}}
 
+В случае, когда спектр оператора является дискретным, возникают матричные представления. Пусть
+$$\hat H \ket{n} = E_n \ket{n}, ~ \ket{n}\definition\ket{\psi_n}, $$
+где $n=0,1,2,\dots$- индекс состояний дискретного спектра. Из условия полноты
+$$\sum_n \ket n \bra n = 1$$
+следует, что произвольный вектор состояния $\ket{\psi}$
+может быть разложен по собственным векторам $\ket{n}$ следующим образом:
+$$\ket{\psi}=\sum\limits_n \ket{\psi} \braket{n}{\psi} $$
+Волновая функция $\braket{n}{\psi}$ в данном n- представлении является столбцом
+$$
+\braket{n}{\psi}\norm{\mqty{\braket{1}{\psi}\\
+				\braket{2}{\psi}\\
+				\braket{3}{\psi}\\
+				\dots }}
+$$
+Операторы в n-представлении являются матрицами
+\begin{gather*}
+\mel{n}{\hat A}{\psi}=\sum\limits_{n'} \mel{n}{\hat A}{n'}\braket{n'}{\psi}=\\
+\sum\limits_{n'} A_{nn'}\braket{n'}{\psi}=
+\norm{
+	\begin{matrix}
+		A_{11} & A_{12} & \dots \\
+		A_{21} & A_{22} & \dots \\
+		\dots  & \dots	& \dots \\
+	\end{matrix}
+}
+\norm{
+	\begin{matrix}
+		\braket{1}{\psi} \\
+		\braket{2}{\psi} \\
+		\dots
+	\end{matrix}
+}
+\end{gather*}
+
+Рассмотрим условие эрмитовости оператора $\hat F$. По определению,
+$$\mel{n}{\hat F}{n'}=\braket{\hat F^+ n}{n'}=\mel{n'}{\hat F^+}{n}^*.$$
+В матричных обозначениях это переписывается так:
+$$ F_{nn}=\qty(F^+)^*_{nn'}, $$
+или
+$$ \qty(F^+)_{n'n}=\qty(F_{n'n})^*=\qty(F^T)^*_{nn'}.$$
+
+Таким образом, оператор эрмитов, то есть $\hat F= \hat F^+$, то
+$$F=(F^T)^*\definition F^+ .$$
+Следовательно, эрмитовым операторам соответствуют эрмитовые матрицы.
+
+Найдем результат последовательного действия операторов $\hat A$ и $\hat B$.
+
+$$\mel{n}{\hat A \hat B}{n'}=\sum\limits_{n''}\mel{n}{\hat A}{n'' }\mel{n''}{\hat B}{n'} =\sum\limits_{n''}A_{nn''}B_{n''n'}$$
+
+Таким образом, матрица оператор, равного произведению операторов $\hat A$ и $\hat B$, равна произведению матриц, соответствующих этим операторам.
 \subsubsection{Задача. Отнормировать/нарисовать $\psi(x)=1/\cosh(\alpha(x-x_0))$}
 
 Дана ненормированная волновая функция $\psi(x)$:
@@ -86,10 +136,10 @@ c^2\int_{-\infty}^{\infty}|\psi(x)|^2 dx=1
 
 \begin{gather*}
 \int_{-\infty}^{\infty}|\psi(x)|^2 dx=
-\int_{-\infty}^{\infty} \cosh^{-2}(\alpha(x-x_0)) dx=
+\int_{-\infty}^{\infty} \cosh^{-2}(\alpha(x-x_0)) dx=\\
 \textcolor{violet}{\left[ y=\alpha(x-x_0), dx=\frac{dy}{\alpha}\right]}=\\=
 \frac{1}{\alpha}\int_{-\infty}^{\infty} \cosh^{-2}y dy=
-\frac{4}{\alpha}\int_{-\infty}^{\infty} \frac{1}{(e^y+e^{-y})^2}dy=
+\frac{4}{\alpha}\int_{-\infty}^{\infty} \frac{1}{(e^y+e^{-y})^2}dy=\\
 \textcolor{violet}{\left[ e^y=t, dy=\frac{dt}{t}, t(y=-\infty)=0, t(y=\infty)=\infty\right]}=\\=
 %
 \frac{4}{\alpha}\int_0^{\infty} \frac{1}{t(t+1/t)^2}dt=
