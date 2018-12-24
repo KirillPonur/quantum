@@ -12,4 +12,19 @@ $$\delta(x) = \frac{1}{2\pi \hbar}\int_{-\infty}^{+\infty} \ e^{\frac{i\pi x}{\h
 
 \subsubsection{\textcolor{red} {Построение оператора эволюции путем разложения по собственным функциям стационарного уравнения.} }
 
-\subsubsection{\textcolor{red} {Напишите оператор координаты в импульсном представлении.} }
+\subsubsection{{Напишите оператор координаты в импульсном представлении.} }
+
+Этот вопрос будет рассматриваться позднее в билете 20. Ниже фрагмент двадцатого билета:
+
+\begin{equation}
+	\label{eq:20.1a}
+	\mel{a}{\hat{L}}{\tilde a}=\int \dd{b}\dd{\tilde b} \Psi_a^*(b)\mel{b}{\hat L}{\tilde b} \Psi_{\tilde a}(\tilde b)
+\end{equation}
+
+Проиллюстрируем формулу \eqref{eq:20.1a} на примере нахождения явного вида оператора $\hat x$ в p-представлении по известному виду этого же оператора в x-представлении. В x-представлении $\mel{x}{\hat x}{\tilde x}=x\delta(x-x').$ Из \eqref{eq:20.1a} получаем:
+\begin{gather*}
+	\mel{p}{\hat x}{\tilde p}=\int \dd x \dd{\tilde x} \Psi_p^(x)\mel{x}{\hat x }{\tilde x}\Psi_{\tilde p}(\tilde x)=
+	\\
+	\frac{1}{2\pi\hbar}\int \dd x \dd{\tilde x} e^{-ipx/\hbar}e^{i\tilde p \tilde x/\hbar}x \delta(x-x')=\frac{1}{2\pi\hbar}\int x\dd x e^{-ix(p-\tilde p)/\hbar}=\\
+	i\hbar\pdv{p}\int \frac{\dd{y}}{2\pi}e^{-y(p-\tilde p)}=i\hbar\pdv{p} \delta(x-x')
+\end{gather*}
