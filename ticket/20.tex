@@ -14,7 +14,28 @@ $$\hat{A}\Psi=a\Psi$$
 
 Если система находится в суперпозиции состояния $\Psi=c_1\Psi_1+c_2\Psi_2+\dots+C_k\Psi_k$, то при измерении системы вероятность получить $a_1$ есть $|c_1|^2$.
 
-\subsubsection{\textcolor{red} {Как преобразуются операторы при смене представления} }
+\subsubsection{ {Как преобразуются операторы при смене представления} }
+
+Пусть $\mel{b}{\hat{L}}{\tilde{b}}$- ядро линейного оператора $\hat{L}$ в $b$представлении. Как будет выглядеть ядро этого же оператора в 
+$\bra{a}\hat{L}\ket{\tilde{a}}$  в $a$-представлении? С помощью единичных операторов запишем
+$$\bra{a}\hat{L}\ket{\tilde{a}}=\bra{a}\hat{1}_b\hat{L}\hat{1}_{\tilde a}\ket{\tilde{b}}=
+\int \dd{b}\dd{\tilde{b}}\braket{a}{b}
+\mel{b}{\hat{L}}{\tilde{b} }
+\braket{\tilde{b}}{\tilde{a}}.$$
+
+
+Тогда общая формула перехода от ядра оператора в b-представлении к ядру в a-представлении имеет вид
+\begin{equation}
+	\label{eq:20.1}
+	\mel{a}{\hat{L}}{\tilde a}=\int \dd{b}\dd{\tilde b} \Psi_a^*(b)\mel{b}{\hat L}{\tilde b} \Psi_{\tilde a}(\tilde b)
+\end{equation}
+Проиллюстрируем формулу \eqref{eq:20.1} на примере нахождения явного вида оператора $\hat x$ в p-представлении по известному виду этого же оператора в x-представлении. В x-представлении $\mel{x}{\hat x}{\tilde x}=x\delta(x-x').$ Из \eqref{eq:20.1} получаем:
+\begin{gather*}
+	\mel{p}{\hat x}{\tilde p}=\int \dd x \dd{\tilde x} \Psi_p^(x)\mel{x}{\hat x }{\tilde x}\Psi_{\tilde p}(\tilde x)=
+	\\
+	\frac{1}{2\pi\hbar}\int \dd x \dd{\tilde x} e^{-ipx/\hbar}e^{i\tilde p \tilde x/\hbar}x \delta(x-x')=\frac{1}{2\pi\hbar}\int x\dd x e^{-ix(p-\tilde p)/\hbar}=\\
+	i\hbar\pdv{p}\int \frac{\dd{y}}{2\pi}e^{-y(p-\tilde p)}=i\hbar\pdv{p} \delta(x-x')
+\end{gather*}
 
 \subsubsection{\textcolor{red} {Найдите стационарные состояния в бесконечно глубокой яме. Найдите силу с
 которой частица действует на стенку} }
