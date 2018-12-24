@@ -60,5 +60,43 @@ $$\Delta x\cdot \Delta p=\frac{4b\cdot2\hbar}{b}=8\hbar  $$
 
 \subsubsection{\textcolor{red} {На примере конкретного пакета продемонстрируйте соотношение неопределенности. Операторы как матрицы. Непрерывные и дискретные индексы.} }
 
+Зададим $C(p)$ следующим образом:
+\begin{equation}
+	C(p)=
+	\begin{cases}
+		C_0, & p \in (p_0- \Delta p, p_0+ \Delta p) \\
+		0,   & p \in (-\infty, p_0- \Delta p)\cup(p_0+ \Delta p,\infty) \\
+	\end{cases}
+\end{equation}
+И пусть $ \Delta p \ll p_0 $ (неопределенность импульса мала). Тогда в окрестности $p_0 $ справедливо
+$$E(p)\approx  E_0+(p-p_0) \qty(\dv{E}{p})\eval_{p_0}.$$
+
+Запишем функцию $\Psi$, отвечающую такой $C(p)$:
+\begin{gather*}
+	\Psi(x,t)=C_0\int\limits_{p_0+ \Delta p}^{p_0 - \Delta p}
+	\frac{1}{\sqrt{2\pi\hbar}}\exp{i\frac{px-Et}{\hbar}}\dd{p}=
+	\\
+	\frac{C_0}{\sqrt{2\pi\hbar}} \int\limits_{p_0+ \Delta p}^{p_0 - \Delta p}
+	\exp{i\frac{px-E_0t-(p-p_0)\dv{E}{p}\eval_{p_0}}{\hbar}} \dd{p} =\\
+	\begin{pmatrix}
+		\xi=\frac{p-p_0}{\hbar} \\
+		\dd{p}=\hbar \dd{\xi}
+	\end{pmatrix}=
+	\frac{C_0\hbar}{\sqrt{2\pi\hbar}}\exp{i\frac{p_0x-E_0t}{\hbar}}
+	\int\limits_{- \Delta p/\hbar }^{+\Delta p/\hbar}
+	\exp{i\xi(x-\dv{E}{p}\eval_{p_0}t)}\dd{\xi}=\\
+	\frac{C_0\hbar}{\sqrt{2	\pi \hbar}}\exp{i\frac{p_0x-E_0t}{\hbar}}f\qty(x-\dv{E}{p}t\eval_{p_0}),
+\end{gather*}
+где
+$$f(\tilde x)= \int\limits_{- \Delta p/\hbar}^{+\Delta p/\hbar} e^{i\xi\tilde x}\dd{x}
+=\frac{1}{i\tilde x}\eval^{\Delta p/\hbar}_{-\Delta p/\hbar}=\frac{2\sin(\frac{\Delta p \tilde x}{\hbar})}{\tilde x}$$
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{fig/fig131}
+\caption{}
+\vspace{-17pt}
+\end{figure}
+Из графика сможем найти соотношение неопределенности
+$$\Delta p \Delta x= 2\pi $$
 
 \subsubsection{\textcolor{red} {Представления операторов умножения и дифференцирования как матриц.} }
