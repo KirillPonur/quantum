@@ -1,1 +1,59 @@
 %!TEX root = ../quantum.tex
+\subsubsection{\textcolor{red}{Операторы физических величин. Какие значения может принимать физическая величина}}
+
+\subsubsection{\textcolor{red}{Оператор производной физической величины по времени}}
+
+\subsubsection{\textcolor{black}{Задача. $\Psi(x)=\Theta(x+L/2)-\Theta(x-L/2)$. Нормировать, перейти $\Psi(x)\to\Psi(p)$. Найти связь ширины в $x$ и $p$ представлениях}}
+
+Дана ненормированная волновая функция $\Psi(x)$:
+\begin{gather*}
+\Psi(x)=\Psi(x)=\Theta\left(x+\frac{L}{2}\right)-\Theta\left(x-\frac{L}{2}\right)
+\end{gather*}
+
+\textbf{Нормировка}. Предположим, что наша функция есть произведение нормированной $\psi_0$ на произвольную константу $\frac{1}{c}$, найдем ее из условия нормировки:
+
+\begin{gather*}
+\int_{-\infty}^{\infty}|\Psi_0(x)|^2 dx=
+c^2\int_{-\infty}^{\infty}|\Psi(x)|^2 dx=1\\
+c^2\int_{-\infty}^{\infty}|\Psi(x)|^2 dx=
+c^2 L \quad\Rightarrow\quad c=\frac{1}{\sqrt{L}}
+\end{gather*}
+Мы нашли нормированную функцию:
+
+\begin{gather*}
+\Psi_0=\frac{1}{\sqrt{L}}\left(
+	\Theta\left(x+\frac{L}{2}\right)-\Theta\left(x-\frac{L}{2}\right)
+\right)
+\end{gather*}
+
+$|\Psi_0|^2$ имеет вид прямоугольника, высота его $\frac{1}{L}$, ширина от $-L/2$ до $L/2$.
+
+
+\textbf{Переход и связь ширин}. Переход в $p$-предст:
+\begin{gather*}
+\Psi(p)=\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^{+\infty}\Psi_0(x)e^\frac{-ipx}{\hbar}dx=
+\frac{1}{\sqrt{2\pi\hbar L}}\int_{-\infty}^{+\infty}\left(
+	\Theta\left(x+\frac{L}{2}\right)-\Theta\left(x-\frac{L}{2}\right)
+\right)e^\frac{-ipx}{\hbar}dx=\\=
+\frac{1}{\sqrt{2\pi\hbar L}}\int_{-L/2}^{+\infty}e^\frac{-ipx}{\hbar}dx-\frac{1}{\sqrt{2\pi\hbar L}}\int_{L/2}^{+\infty}e^\frac{-ipx}{\hbar}dx=
+\frac{1}{\sqrt{2\pi\hbar L}}\int_{-L/2}^{+L/2}e^\frac{-ipx}{\hbar}dx=\\=
+\frac{1}{\sqrt{2\pi\hbar L}} \frac{\hbar}{(-ip)} e^\frac{-ipx}{\hbar}\bigg|_{-L/2}^{L/2}=\frac{2\hbar L}{pL\sqrt{2\pi\hbar L}}\sin\frac{pL}{2\hbar}
+%
+=\frac{L}{\sqrt{2\pi\hbar L}}\,\mathrm{sinc}\,\frac{pL}{2\hbar}
+=\sqrt{\frac{L}{h}}\,\mathrm{sinc}\,\frac{pL}{2\hbar}
+\end{gather*}
+
+Характерная ширина синка -- это ширина первого лепестка:
+
+$\frac{pL}{2\hbar}=\pi$ -- первый ноль синка, значит ширина лепестка это расстояние между симметричными нулями: $\Delta p = 2p=\frac{2h}{L}$
+
+Учтя, что у нашей вф $\Delta x = L$, окончательно получим:
+$$
+\Delta x \Delta p = 2h
+$$
+Верно, соответствует принципу неопределенности с точностью до постоянного множителя.
+
+Выбирая другую характерную ширину синка, больше чем первый лепесток, получим 
+$$
+\Delta x \Delta p \geq 2h
+$$
