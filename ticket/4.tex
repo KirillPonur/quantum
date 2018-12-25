@@ -1,8 +1,45 @@
 %!TEX root = ../quantum.tex
 
-\subsubsection{\textcolor{red}{Вывести соотношения действия/гамильтониана/импульса ($\nabla S=\vec{p},\frac{\partial S}{\partial t}=-H$)}}
+\subsubsection{{Вывести соотношения действия/гамильтониана/импульса ($\nabla S=\vec{p},\frac{\partial S}{\partial t}=-H$)}}
 
-\subsubsection{\textcolor{red}{Чему равно среднее физической величины $A$. Определение через волновую функцию в $x$ -- представлении, некотором $B$ представлении, и $A$ представлении}}
+$$ S[q,t]\definition \int \limits_t^{t_{f}} L(q,\dot q,t )\dd{t}$$
+L-функция Лагранжа.
+
+\begin{gather*}
+	\delta S= \int \qty[\pdv{L}{q}\cdot \delta q + \pdv{L}{q} \delta \dot q]\dd{t}=\\
+	\qty{\dv{t}\qty(\frac{L}{\dot q} \delta q) = \pdv{L}{q}\delta \dot q +
+	\delta \dv{t}\qty(\pdv{L}{\dot q})
+	}
+	\\
+	\qty{
+	\pdv{L}{q} \delta \dot q= \dv{t}\qty(\pdv{L}{\dot q} \delta q)- \delta q
+	\dv{t}\qty(\pdv{L}{\dot q})
+	}\\
+	=\int \qty[\pdv{L}{q}-\dv{t}\qty(\pdv{L}{\dot q})]\delta q \dd t + \pdv{L}{\dot q}\delta q \eval_t^{t_f}= \\
+	\int \qty[\pdv{L}{q}-\dv{t}\qty(\pdv{L}{\dot q})]\delta q \dd t=0
+\end{gather*}
+Значит 
+$$\pdv{L}{q}-\dv{t}\qty(\pdv{L}{\dot q})=0 $$
+$$L=p\cdot \dot q -H, ~ p\definition\pdv{L}{\dot q}$$
+Рассмотрим $S[q,t]$ не как функционал а как функцию верхнего и нижнего предела, то есть $S[q_i,t_i'q_f,t_f]$
+
+$$\delta S= p \delta q + 	\int \qty[\pdv{L}{q}-\dv{t}\qty(\pdv{L}{\dot q})] \delta q \dd t  $$
+$$p=\frac{\delta S}{\delta q}$$
+
+Если обобщенных координат много, то $\pdv{S}{q_i}=p_i$. Значит $\nabla S=\vec p$.
+
+\begin{gather*}
+	\begin{cases}
+		\dv{S}{t}=L=p\cdot \dot q -H \\
+		\dv{S}{t}=\pdv{S}{q} \dot q +\frac{S}{t}
+	\end{cases}
+	\eval \Longrightarrow \pdv{S}{t}=-H
+\end{gather*}
+
+
+\subsubsection{{Чему равно среднее физической величины $A$. Определение через волновую функцию в $x$ -- представлении, некотором $B$ представлении, и $A$ представлении}}
+\textbf{Вариант Ильи}:
+
 
 $$\mean{A}=\infint \Psi^*(x)\hat A \Psi(x) \dd{x}- \text{ квантово-механическое усреднение}$$
 Через произвольные функции в $x$- представлении
@@ -13,5 +50,41 @@ $$\mean{A}=\infint \Psi^*(x)\hat A \Psi(x) \dd{x}- \text{ квантово-ме�
 
 $$\mean{A}=\infint \Psi^*(B) \hat A \Psi(B) \dd{B}- \text{среднее в некотором представлении }, $$
 $$ \hat A- \text{оператор в B представлении}$$
+
+\textbf{Вариант Ани}:
+
+По определению среднего:
+$$\bar A= \sum\limits_n C_m\abs{C_n}^2 =\sum\limits_n a_n C_n C_n^*$$
+\begin{gather*}
+	\bar A= \sum\limits_n a_n \int \Psi(x' )\Psi_n^*(x' )\dd{x'}\int \Psi^*(x' )\Psi_n(x' )\dd{x' }=
+	\\
+	\int \Psi^*(x' )\sum\limits_n a_n \Psi_n^*(x' )\Psi_n(x')\Psi(x' )\dd{x} \dd{x' }=
+	\\
+	\qty{K(x,x')=\sum\limits_n a_n\Psi_n^*(x'')\Psi(x' )-\text{ядро оператора}}
+	\\=
+\int	\Psi^*(x')K(x,x')\Psi(x' )\dd{x}\dd{x' }=\int\Psi^*(x)\hat A \Psi(x) \dd{x}
+\end{gather*}
+$$\hat A \Psi(x)=\int K(x,x' )\Psi(x' )\dd{x' }$$
+
+$$\bar{\hat A}= \mel{\Psi}{\hat A}{\Psi}$$--
+определение через волновую функцию в x- представлении.
+
+Пусть есть оператор $\hat B$
+
+$$\hat B \phi_n(x)=b_n \phi_n(x)$$
+
+$$\phi(x)=\sum\limits_n C_n \phi_n (x)$$
+$$\phi^*(x)=\sum\limits_m C_m^* \phi_m^*(x)$$
+
+$$\bar A=\int \sum\limits_{n,m} C_m^*C_n (\phi_m^* \hat A \phi_n) \dd{x} = \sum\limits_{n,m} C_m^* C_n A_{mn}$$
+
+$$\bar{\hat A} = \sum\limits_{n,m} C_m^* C_n A_{mn}$$
+-- определение через B-представление
+
+$$\hat A \Psi_n(x)=a_n \Psi_n(x) $$
+Скалярно умножим на $\Psi_m^*(x)$
+
+$$\mel{\Psi_m}{\hat A}{\Psi_n}=a_m \braket{\Psi_m}{\Psi_n}=a_m \delta_{mn}=A_{mn}$$
+$$\bar A=A_{mn}$$-- в собственном представлении.
 
 \subsubsection{\textcolor{red}{Задача. Эксп. регуляризацией доказать $\frac{1}{2\pi}\int\exp(-k(x-x'))dk=\delta(x-x')$ + на языке Дирака + две интерп.}}
