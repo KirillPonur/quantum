@@ -78,29 +78,29 @@ $$\sum_n \ket n \bra n = 1$$
 $$\ket{\psi}=\sum\limits_n \ket{n} \braket{n}{\psi} $$
 Волновая функция $\braket{n}{\psi}$ в данном n- представлении является столбцом
 $$
-\braket{n}{\psi}=\norm{\mqty{\braket{1}{\psi}\\
+\braket{n}{\psi}=\begin{bmatrix}\braket{1}{\psi}\\
 				\braket{2}{\psi}\\
 				\braket{3}{\psi}\\
-				\dots }}
+				\dots \end{bmatrix}
 $$
 Операторы в n-представлении являются матрицами
 \begin{gather*}
 \mel{n}{\hat A}{\psi}=\sum\limits_{n'} \mel{n}{\hat A}{n'}\braket{n'}{\psi}=\\
 \sum\limits_{n'} A_{nn'}\braket{n'}{\psi}=
-\norm{
-	\begin{matrix}
+% \norm{
+	\begin{bmatrix}
 		A_{11} & A_{12} & \dots \\
 		A_{21} & A_{22} & \dots \\
 		\dots  & \dots	& \dots \\
-	\end{matrix}
-}
-\norm{
-	\begin{matrix}
+	\end{bmatrix}
+% }
+% \norm{
+	\begin{bmatrix}
 		\braket{1}{\psi} \\
 		\braket{2}{\psi} \\
 		\dots
-	\end{matrix}
-}
+	\end{bmatrix}
+% }
 \end{gather*}
 
 Рассмотрим условие эрмитовости оператора $\hat F$. По определению,
