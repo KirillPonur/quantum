@@ -37,10 +37,10 @@ $$  \hat{H}\varphi_n(x) = E_n \varphi_n(x) $$
 
 $$  \sum_n  (i\hbar \dot{C_n(t)} - C_n E_n) \varphi_n(x) = 0   $$
 
-Слвеа скалярно домножим на $ \varphi_m(x)$:
+Слева скалярно домножим на $ \varphi_m(x)$:
 $$  \bra{\varphi_m} \sum_n  (i\hbar \dot{C_n(t)} - C_n(t) E_n) \ket{ \varphi_n(x)} =0 $$
 $$ \bra{\varphi_m}\ket{ \varphi_n} = \delta_{mn} =>  i\hbar \dot{C_m(t)} - C_m(t) E_m=0$$
-Полученноу уравнение - уравнение Шредингера в энергитическом представлении 
+Полученное уравнение - уравнение Шредингера в энергетическом представлении 
 $$ C_m = C_0 e^{-\frac{iE_m}{\hbar}t} $$
 $$ => \psi(x,t) = \sum_n C_0 e^{-\frac{iE_m}{\hbar}t} \varphi_n(x) \text{ - общее решение УШ} $$
 Домножим УШ скалярно слева на $ \bra{x}$:
@@ -48,7 +48,7 @@ $$ i\hbar\bra{x}\ket{\dot{\psi(t)}} = \hat{H} \bra{x}\ket{\psi(t)}$$
 $$ i\hbar\bra{x}\hat{1}\ket{\dot{\psi(t)}} = \hat{H} \bra{x}\hat{1}\ket{\psi(t)}$$
 $$\hat{1} = \sum_n \ket{n}\bra{n} = \sum_n \ket{\varphi_n} \bra{\varphi_n} \text{ - подставим в уравнение выше}$$ 
 $$\sum_n i\hbar \bra{x}\ket{n}\bra{n}\ket{\dot{\psi(t)}} = \hat{H}\sum_n\bra{x}\ket{n}\bra{n}\ket{\psi(t)}$$
-Скалярно умножим слева на $\bra{m}\ket{x}$ и возьмем $ \int dx$. Тогда $i\hbar \bra{n}\ket{\psi(t)} = \sum_n \bra{m}
+Скалярно умножим слева на $\bra{m}\ket{x}$ и возьмем $ \int dx$(???). Тогда $i\hbar \bra{n}\ket{\psi(t)} = \sum_n \bra{m}
 \hat{H} \ket{n}\bra{n}\ket{\psi(t)}$, $\hat{H}$ стала диагональной
 $$ \hat{H}\ket{n} = E_n \ket{n} \text{ - домножим скалярно на } \bra{m}$$
 $ \bra{m} \hat{H} \ket{n} =  E_n \bra{m}\ket{n} =E_n \delta_{mn} $ - диагональная матрица. На диагонали стоят $E_n$(Это
