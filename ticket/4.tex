@@ -87,4 +87,20 @@ $$\hat A \Psi_n(x)=a_n \Psi_n(x) $$
 $$\mel{\Psi_m}{\hat A}{\Psi_n}=a_m \braket{\Psi_m}{\Psi_n}=a_m \delta_{mn}=A_{mn}$$
 $$\bar A=A_{mn}$$-- в собственном представлении.
 
-\subsubsection{\textcolor{red}{Задача. Эксп. регуляризацией доказать $\frac{1}{2\pi}\int\exp(-k(x-x'))dk=\delta(x-x')$ + на языке Дирака + две интерп.}}
+\subsubsection{{Задача. Эксп. регуляризацией доказать $\frac{1}{2\pi}\int\exp(-k(x-x'))dk=\delta(x-x')$ + на языке Дирака + две интерп.}}
+
+$$\infint e^{ik(x-x')}\frac{\dd{k}}{2\pi}=\delta (x-x' )$$
+
+\begin{gather*}
+\lim\limits_{\lambda\rightarrow 0} \infint e^ {ik\xi+\lambda \abs{k}} \dd{k}=
+\lim\limits_{\lambda\rightarrow 0} 
+	\qty(\int \limits_{-\infty}^0 e^ {ik\xi-\lambda k} \dd{k}
++\lim\limits_{\lambda\rightarrow 0} 
+	\int \limits_{0}^{\infty} e^ {ik\xi+\lambda k} \dd{k})
+=\\\lim\limits_{\lambda\rightarrow 0} \qty[\frac{1}{i\xi-\lambda}\cdot\exp{ik\xi- \lambda k	 }\eval\limits_0^{\infty}
++\frac{1}{i\xi+\lambda}\cdot\exp{ik\xi- \lambda k	 }\eval\limits^0_{-\infty}] =\\
+\lim\limits_{\lambda\rightarrow 0} \qty[-\frac{1}{i\xi- \lambda}+\frac{1}{i\xi+ \lambda}]= \lim\limits_{\lambda\rightarrow 0} \frac{-i\xi- \lambda - i \xi - \lambda}{- \xi^2 - \lambda^2}= 
+\\
+\lim\limits_{\lambda\rightarrow 0} \frac{2\lambda}{\xi^2+ \lambda^2}
+\equiv  \lim\limits_{\lambda\rightarrow 0} f_{\lambda}(\xi)
+\end{gather*}
