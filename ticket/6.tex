@@ -1,7 +1,46 @@
 %!TEX root = ../quantum.tex
 \subsubsection{\textcolor{red}{Операторы физических величин. Какие значения может принимать физическая величина}}
 
-\subsubsection{\textcolor{red}{Оператор производной физической величины по времени}}
+\subsubsection{{Оператор производной физической величины по времени}}
+
+$$\bar A = \mel{\Psi}{\hat A}{\Psi}$$
+\textbf{Определение:} $\bar{\dot x}=\dot{\bar x}$, где $\dot x$- оператор производной по времени. 
+
+В общем случае оператор $\hat A$ может зависеть от времени.
+Тогда 
+$$\dot{\hat A}= 
+\mel{\dot \Psi}{\hat A}{\Psi}+ 
+\mel{\Psi}{\hat A}{\dot \Psi}+
+\mel{\Psi}{\pdv{\hat A}{t}}{\Psi}$$
+
+Когда $\hat A=\hat H$, то нет зависимости от времени оператора, но при этом среднее от времени будет зависеть
+
+$$\dot{\bar x}=\mel{\dot \Psi}{\hat x}{\Psi}+\mel{\Psi}{\hat x}{\dot \Psi} $$
+
+Тогда $$\ket{\dot \Psi}=\frac{1}{i\hbar}\hat H \ket{\Psi}$$
+$$\ket{\Psi^+}=\bra{\Psi} $$
+$$(\hat H \ket{\Psi})^+=\bra{\Psi}\hat H^+ $$
+Тогда 
+$$\bra{\dot\Psi} =-\frac{1}{i\hbar}\bra{\Psi} \hat H^+
+$$
+Учтем, что $\hat H^+=\hat H$
+
+
+
+\begin{gather*}
+\dot{\bar x}=\frac{i}{\hbar}\qty(\mel{\Psi}{\hat H \hat x}{\Psi}- \mel{\Psi}{ \hat x \hat H}{\Psi})=\frac{i}{\hbar}\mel{\Psi}{\qty(\hat H \hat x- \hat x \hat H)}{\Psi}=
+\bar{\hat x}
+\end{gather*}
+$$\hat{\dot x}=\hat H \hat x- \hat x \hat H=\hat V_x$$
+
+$$H=-\frac{\hbar^2}{2m}\pdv[2]{x}+U(x)$$
+$U(x)x-xU(x)=0$- U и x коммутируют.
+
+\begin{gather*}
+	\hat V_x=-\frac{i\hbar}{2m}\qty(\pdv[2]{x} x - x\pdv[2]{x})\Psi=-\frac{i\hbar}{2m}
+	\qty{x\Psi'' +\Psi'+\Psi'-x\Psi '' }\\=-\frac{i\hbar}{m}\pdv{x}\Psi=\frac{\hat p}{m}\Psi
+\end{gather*}
+Следовательно $\hat V_x=\frac{\hat p}{x}$
 
 \subsubsection{\textcolor{black}{Задача. $\Psi(x)=\Theta(x+L/2)-\Theta(x-L/2)$. Нормировать, перейти $\Psi(x)\to\Psi(p)$. Найти связь ширины в $x$ и $p$ представлениях}}
 
