@@ -11,9 +11,36 @@ $$\ket{\Psi(t)}=\hat U(t)\ket{\Psi(0)},$$
 
 Здесь $\Psi(0)$- е зависит от времени.
 
-Но $\hat A^+(t)$ - зависит от времени.
+Но $\hat A^{\text{Г}}(t)$ - зависит от времени.
 
 Найдем связь $\hat A^{\text{Ш}}$ и $\hat A^{\text{Г}}$
+
+$$\bar{\hat A}=\bra{\Psi(0)}\hat U^{-1}\hat{A^{\text{Ш}}}\hat U\ket{\Psi(0)} $$
+Оператор эволюции унитарен, то есть $\hat U^+=\hat U^{-1}$
+
+$$\bra{\Psi(t)=\bra{\Psi(0)}}\hat U^{+} =\bra{\Psi(0) \hat U^{-1}}$$
+
+Значит 
+$$\hat A^{\text{ Г}}=\hat U^{-1} \hat A^{\text{Ш }}\hat U $$-- 
+оператор Гейзенберга.
+
+$$\hat U= \exp{-\frac{\hat H}{\hbar}t}, ~ \hat U^{-1}= \exp{\frac{\hat H}{\hbar}t}$$
+\begin{gather*}
+  \hat{\dot A }^{\text{ Г}}=\hat{\dot U}^{-1}\hat A^{\text{ Ш }}\hat U+ \hat U^ {-1} \hat A^{\text{ Ш }}\hat{\dot U} + \hat U^{-1}\pdv{\hat A^{\text{Ш}}}{t}\hat U=\\
+  +\frac{i}{\hbar}\hat H \hat{\dot U}^{-1}\hat A^{\text{Ш}}\hat U+\qty(-\frac{i}{\hbar})\hat U^{-1}\hat A^{\text{Ш}} \hat{\dot U}\hat H+ \pdv{\hat A^{\text{Г}}}{t}=
+  \\
+  \frac{i}{\hbar}\qty(\hat H \hat A^{\text{Г}}-\hat A^{\text{Г}}\hat H)+\pdv{\hat A^{\text{Г}}}{t}
+\end{gather*}
+Отсюда получаем 
+$$\hat{ \dot{ A^{\text{Г}}}}=\frac{i}{\hbar}\qty(\hat H\hat A^{\text{Г}}-\hat A^{\text{Г}}\hat H)+\pdv{\hat A^{\text{Г}}}{t} $$--
+уравнение Гейзенберга
+
+Если вместо $\hat A^{\text{Ш}}$ подставить $H^{\text{Ш}}$ (при этом $\hat H=\hat H^{\text{Ш}}$), то
+$$\hat H^{\text{Г}}=\exp{-\frac{\hat H}{\hbar}t}\hat H \exp{i\frac{\hat H}{\hbar}t}=
+\hat H $$
+
+Следовательно, $H^{\text{Ш}}=H^{\text{Г}}$
+
 \subsubsection{Докажите, что $\infint p \abs{\Psi(p)}^2\dd{p}=\infint\Psi^*(x)\qty{-i\hbar\nabla}\Psi(x)\dd x$}
 
 {\centering{\textbf{Доказательство}}}
