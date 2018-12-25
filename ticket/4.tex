@@ -97,10 +97,33 @@ $$\infint e^{ik(x-x')}\frac{\dd{k}}{2\pi}=\delta (x-x' )$$
 	\qty(\int \limits_{-\infty}^0 e^ {ik\xi-\lambda k} \dd{k}
 +\lim\limits_{\lambda\rightarrow 0} 
 	\int \limits_{0}^{\infty} e^ {ik\xi+\lambda k} \dd{k})
-=\\\lim\limits_{\lambda\rightarrow 0} \qty[\frac{1}{i\xi-\lambda}\cdot\exp{ik\xi- \lambda k	 }\eval\limits_0^{\infty}
-+\frac{1}{i\xi+\lambda}\cdot\exp{ik\xi- \lambda k	 }\eval\limits^0_{-\infty}] =\\
+=\\\lim\limits_{\lambda\rightarrow 0} \qty[\frac{1}{i\xi-\lambda}\cdot\exp{ik\xi- \lambda k	 }\eval_0^{\infty}
++\frac{1}{i\xi+\lambda}\cdot\exp{ik\xi- \lambda k	 }\eval^0_{-\infty}] =\\
 \lim\limits_{\lambda\rightarrow 0} \qty[-\frac{1}{i\xi- \lambda}+\frac{1}{i\xi+ \lambda}]= \lim\limits_{\lambda\rightarrow 0} \frac{-i\xi- \lambda - i \xi - \lambda}{- \xi^2 - \lambda^2}= 
 \\
 \lim\limits_{\lambda\rightarrow 0} \frac{2\lambda}{\xi^2+ \lambda^2}
 \equiv  \lim\limits_{\lambda\rightarrow 0} f_{\lambda}(\xi)
+\end{gather*}
+
+\begin{gather*}
+	\infint \frac{2\lambda}{\xi^2 + \lambda^2}\dd{\xi}=2 \lambda \frac{1}{\lambda}\infint \frac{1}{1+(\frac{\xi}{\lambda})^2}\dd{\xi}=
+	2\arctan{\frac{\xi}{\lambda}}\eval_{-\infty}^{\infty}=2\hbar
+\end{gather*}
+$$\lim\limits_{\lambda\rightarrow 0} \frac{2 \lambda}{\xi^2+\lambda^2}=2\pi \delta(\xi)$$
+Если $\lambda\rightarrow 0$, то ширина стремится к 0. График вытягивается. Получаем $\delta (\xi)\equiv \delta (x-x' )$
+
+$$2\pi \delta(x-x')\cdot\frac{1}{2\pi}=\delta(x-x')$$
+\qed
+
+$$e^{ikx}=\Psi_k(x)=\braket{x}{k}$$
+
+$$e^{-ikx' }=\Psi_k^*(x')=\braket{k}{x' }$$--состояние с конкретным k в x-представлении (х -- число).
+
+$$\frac{1}{2\pi}\infint \braket{k}{x'}\braket{x}{k} \dd{k}=\delta(x-x' )$$
+Пусть x- оператор, тогда
+\begin{gather*}
+	e^{ikx}=\Psi_x(k)=\braket{k}{x} \\
+	\ket{\Psi_x}\equiv \ket{x} \\
+	e^{-ikx'}=\Psi_{x'}^*(k)=\braket{x'}{k} \\
+	\frac{1}{2\pi}\infint \braket{x'}{k}\braket{x}{k} \dd{k}= \delta(x-x)
 \end{gather*}
